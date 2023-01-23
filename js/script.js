@@ -1,5 +1,5 @@
 // Created by: Alex Nelson
-// Created on: Dec 2022
+// Created on: Jan 2023
 // This file contains the JS functions for index.html
 
 "use strict"
@@ -8,8 +8,8 @@
  * Check servie worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-UNIT6-04-JS-QUERY-STRINGS/sw.js", {
-    scope: "/ICS2O-UNIT6-04-JS-QUERY-STRINGS/",
+  navigator.serviceWorker.register("/ICS2O-UNIT6-04-QUERY-STRINGS-VOLUME-OF-A-CUBE/sw.js", {
+    scope: "/ICS2O-UNIT6-04-QUERY-STRINGS-VOLUME-OF-A-CUBE/",
   })
 }
 
@@ -24,14 +24,14 @@ window.onload = function() {
   const params = new URLSearchParams(document.location.search)
 
   // input
-  const radius = params.get("r")
-  console.log(radius)
+  const length = params.get("l")
+  console.log(length)
 
   // process
-  const volume = (4 / 3) * Math.PI * (radius ** 3)
+  const volume = (length ** 3)
 
 
   // output
-  document.getElementById("dimension").innerHTML = "r = " + radius
+  document.getElementById("dimension").innerHTML = "side length = " + length
   document.getElementById("output").innerHTML = "Volume: " + volume + " cm³"
 }
